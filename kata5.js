@@ -8,18 +8,18 @@ const urlEncode = function(text) {
   let endIndex = text.length;
 
   // check if the string starts with an empty space
-  if (text[0] === " "){
+  if (text[0] === " ") {
     startIndex = 1;
   }
 
   // check if the last string contains an empty space
-  if (text[text.length - 1 ] === " "){
+  if (text[text.length - 1 ] === " ") {
     endIndex = text.length - 1;
   }
 
-  // loop with the given indexes and write characters and if there is an empty space, write "%20", 
-  for (i = startIndex; i < endIndex; i++){
-    if (text[i] === " "){
+  // loop with the given indexes and write characters and if there is an empty space, write "%20"
+  for (let i = startIndex; i < endIndex; i++) {
+    if (text[i] === " ") {
       newText += "%20";
 
     } else {

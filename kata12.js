@@ -1,4 +1,4 @@
-const makeCase = function (input, casing) {
+const makeCase = function(input, casing) {
 
   // return string
   let returnStr = "";
@@ -6,12 +6,12 @@ const makeCase = function (input, casing) {
   // process if input string is in object type
   if (typeof casing === "object") {
 
-    // set current input/casing to be used in for loop functions 
+    // set current input/casing to be used in for loop functions
     let currentInput = input;
     let currentCasing = "";
 
     // define object properties for casing to sort priority
-    let multiParamCasing = {
+    const multiParamCasing = {
       camel: false,
       pascal: false,
       snake: false,
@@ -21,11 +21,11 @@ const makeCase = function (input, casing) {
       consonant: false,
       upper: false,
       lower: false
-    }
+    };
 
     // set values of the parameter object and change matching key to 'true'
-    for (i = 0; i < casing.length; i++) {
-      for (j = 0; j < Object.keys(multiParamCasing).length; j++) {
+    for (let i = 0; i < casing.length; i++) {
+      for (let j = 0; j < Object.keys(multiParamCasing).length; j++) {
         if (casing[i] === Object.keys(multiParamCasing)[j]) {
           multiParamCasing[Object.keys(multiParamCasing)[j]] = true;
         }
@@ -33,7 +33,7 @@ const makeCase = function (input, casing) {
     }
 
     // loop through parameter casing to run functions and run next functions with processed string
-    for (x = 0; x < Object.keys(multiParamCasing).length; x++) {
+    for (let x = 0; x < Object.keys(multiParamCasing).length; x++) {
 
       if (Object.values(multiParamCasing)[x] === true) {
         currentCasing = Object.keys(multiParamCasing)[x];
@@ -56,15 +56,15 @@ const makeCase = function (input, casing) {
 
   // return the processed string.
   return returnStr;
-}
+};
 
 
 // function declaration
-function stringCasing(input, casing) {
+let stringCasing = function(input, casing) {
 
   // output string to be returned
   let str = "";
-  // string to be replaced with empty spaces. If none, replace with "" 
+  // string to be replaced with empty spaces. If none, replace with ""
   let replaceChar = "";
   // if uppercasing is required
   let isUpperCaseRequired = false;
@@ -77,9 +77,9 @@ function stringCasing(input, casing) {
   // if everything needs to be lowercased
   let isAllLowerCase = false;
 
-  /* check if the previous index was an empty space. 
-  If true, the next character is uppercased. 
-  If false, the next character is not uppercased. 
+  /* check if the previous index was an empty space.
+  If true, the next character is uppercased.
+  If false, the next character is not uppercased.
   Any letter that starts with uppercase should set this to true.
   */
   let isSpace = false;
@@ -139,7 +139,7 @@ function stringCasing(input, casing) {
   }
 
   //loop the given string
-  for (i = 0; i < input.length; i++) {
+  for (let i = 0; i < input.length; i++) {
     // if the current character is an empty space while not using vowel/consonant uppercasing
     if (input[i] === " " && isVowelUpperCase === false && isConsonantUpperCase === false) {
       // next character will be uppercased
@@ -207,8 +207,7 @@ function stringCasing(input, casing) {
   }
 
   return str;
-}
-
+};
 
 console.log(makeCase("this is a string", "camel"));
 console.log(makeCase("this is a string", "pascal"));

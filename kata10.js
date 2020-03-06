@@ -1,4 +1,4 @@
-let calculateChange = function (total, cash) {
+const calculateChange = function(total, cash) {
 
   // get change and define a changeable variable @remainingChange to use step-calculation
   const change = cash - total;
@@ -23,12 +23,12 @@ let calculateChange = function (total, cash) {
   let newObj = {};
 
   // loop using the table index
-  for (i = 0; i < moneyTable.length; i++) {
+  for (let i = 0; i < moneyTable.length; i++) {
     // if more than 1 of the money value is included in the change, set the remaining change after taking the used value away
     if ((remainingChange / moneyTable[i].value) > 1) {
 
       // indicate which money value is currently used
-      moneyString = moneyTable[i].string;
+      let moneyString = moneyTable[i].string;
 
       /* Get how many times a money value can be used i.e.) 250 -> 2 x dollars + remaining 50c
        And set the value in the object such as {dollar : 1}
@@ -40,9 +40,7 @@ let calculateChange = function (total, cash) {
 
     }
   }
-
   return newObj;
-
 };
 
 console.log(calculateChange(1787, 2000));

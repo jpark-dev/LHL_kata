@@ -1,4 +1,4 @@
-let camelCase = function(input) {
+const camelCase = function(input) {
   
   // build an empty string to be returned
   let str = "";
@@ -8,16 +8,16 @@ let camelCase = function(input) {
   // boolean to make the string capitalizd or not
   let capitalOrNot = false;
 
-  for (i = 0; i < input.length; i++ ){
-    if (input[i] === " "){
-      // if there is a space, skip one and capitalize the next character, 
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] === " ") {
+      // if there is a space, skip one and capitalize the next character,
       capitalOrNot = true;
       
       // if the character is not an empty string, add that character to @str
     } else {
 
       // check if current character came right after an empty space, if so, change it to upper case
-      if (capitalOrNot === true){
+      if (capitalOrNot === true) {
         str += input[i].toUpperCase();
 
         // after uppercasing, set @capitalOrNot as false to reset

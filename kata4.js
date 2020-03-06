@@ -4,7 +4,7 @@ const instructorWithLongestName = function(instructors) {
   let currentLongest = 0;
 
   //loop to find the longest name by comparing the current longest name index and current name
-  for (i = 0 ; i < instructors.length; i++){
+  for (let i = 0; i < instructors.length; i++) {
     
     if (instructors[i].name.length > instructors[currentLongest].name.length) {
       

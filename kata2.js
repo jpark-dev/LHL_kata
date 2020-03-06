@@ -4,32 +4,32 @@ const conditionalSum = function(values, condition) {
   let total = 0;
 
   // take only even numbers
-  if (condition === "even"){
+  if (condition === "even") {
     
     // loop through an array and add the value if it is an even number
-  	for (i = 0; i < values.length; i++){
+    for (let i = 0; i < values.length; i++) {
       //even number has the reminder of 0 if divided by 2
-  		if (values[i] % 2 === 0){
+      if (values[i] % 2 === 0) {
         //add the current value to the total sum variable
-      	total += values[i];
-      }   
-  	}    
+        total += values[i];
+      }
+    }
     return total;
     
     // take only odd numbers
-  } else if (condition === "odd"){
+  } else if (condition === "odd") {
     
-    for (i = 0; i < values.length; i++){
-    	// odd number has the reminder of 1 if divided by 2
-  		if (values[i] % 2 === 1){
-      	total += values[i];
-      }   
-  	}      
+    for (let i = 0; i < values.length; i++) {
+      // odd number has the reminder of 1 if divided by 2
+      if (values[i] % 2 === 1) {
+        total += values[i];
+      }
+    }
     return total;
 
     // if it's neither odd or even integers such as negative numbers, 3.14... return 0
   } else {
-  	return 0;
+    return 0;
   }
 };
 

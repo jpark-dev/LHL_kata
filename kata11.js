@@ -1,27 +1,26 @@
 const organizeInstructors = function(instructors) {
   
   // define a new object for output
-  let newObj = {};
+  const newObj = {};
   // define a new object to store course names
-  let courseArr = [];
+  const courseArr = [];
   
   // loop to store course names in array
-  for (i = 0; i < instructors.length; i++){
+  for (let i = 0; i < instructors.length; i++) {
     courseArr.push(instructors[i].course);
-
   }
   
   // loop through the array with course names
-  for (i = 0; i < courseArr.length; i++){
+  for (let i = 0; i < courseArr.length; i++) {
 
     // define an array to store names as a value (key:value === iOS : ["Samuel"])
-    let nameArr = [];
+    const nameArr = [];
     
     // loop to find matching names with courses
-    for (j = 0; j < instructors.length; j++){
+    for (let j = 0; j < instructors.length; j++) {
 
-      // if the course name stored in @courseArr matches 
-      if (instructors[j].course === courseArr[i]){
+      // if the course name stored in @courseArr matches
+      if (instructors[j].course === courseArr[i]) {
         // push current name into @nameArr
         nameArr.push(instructors[j].name);
       }

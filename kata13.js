@@ -1,7 +1,7 @@
-const urlDecode = function (text) {
+const urlDecode = function(text) {
 
   // create object to be returned
-  let returnObj = {};
+  const returnObj = {};
   // create object key and value to be formatted
   let objKeyName = "";
   let objValueName = "";
@@ -11,7 +11,7 @@ const urlDecode = function (text) {
   let replaceTextWith = "";
 
   // loop the given string @text
-  for (i = 0; i < text.length; i++) {
+  for (let i = 0; i < text.length; i++) {
 
     // if current character is not an equal : string, either key or value
     if (text[i] !== "=") {
